@@ -1,7 +1,7 @@
 blog
 ================
 
-See the [component page](http://Duelist.github.io/blog) for more information.
+See the [component page](http://Duelist.github.io/polymer-blog) for more information.
 
 ## Getting Started
 
