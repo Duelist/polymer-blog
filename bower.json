@@ -1,8 +1,8 @@
 {
-  "name": "blog",
+  "name": "polymer-blog",
   "version": "0.0.0",
   "keywords": "seed, polymer, web-components",
-  "main": "blog.html",
+  "main": "polymer-blog.html",
   "dependencies": {
     "polymer": "Polymer/polymer#~0.3.1"
   }

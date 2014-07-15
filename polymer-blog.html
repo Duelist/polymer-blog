@@ -1,4 +1,5 @@
-<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="blog-post.html">
 
 <!--
 Element providing solution to no problem in particular.
@@ -12,12 +13,13 @@ Element providing solution to no problem in particular.
 @status alpha
 @homepage http://Duelist.github.io/blog
 -->
-<polymer-element name="blog" attributes="notitle">
+<polymer-element name="polymer-blog" attributes="title notitle">
 
   <template>
 
-    <link rel="stylesheet" href="blog.css" />
+    <link rel="stylesheet" href="polymer-blog.css" />
 
+    <h1>{{title}}</h1>
     <content></content>
 
   </template>

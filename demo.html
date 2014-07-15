@@ -4,15 +4,24 @@
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
   <title>blog Demo</title>
 
-  <script src="../platform/platform.js"></script>
-  <link rel="import" href="blog.html">
+  <script src="bower_components/platform/platform.js"></script>
+  <link rel="import" href="polymer-blog.html">
 
 </head>
 <body unresolved>
 
-  <p>A `blog` looks like this:</p>
+  <p>A `polymer-blog` looks like this:</p>
 
-  <blog></blog>
+  <blog title="My Blog">
+    <blog-post>
+      <h3>Post Title</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eros neque, commodo ut tincidunt in, dapibus quis urna. Quisque commodo eros at ante vehicula fermentum. Etiam quis nisl vel nisl accumsan tempor ut vel sem. Mauris porttitor mi nec ullamcorper aliquam. Fusce commodo gravida ullamcorper. Integer pretium vestibulum eleifend. Quisque tincidunt tellus nec neque molestie, in adipiscing lorem tristique.</p>
+      <p>Morbi tortor sapien, imperdiet vitae consectetur sit amet, scelerisque at nisl. Nullam et feugiat tortor, in fermentum sapien. Fusce auctor facilisis justo ut cursus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi eu fringilla massa, vel viverra sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse metus ligula, rhoncus nec quam sit amet, adipiscing tincidunt urna. Etiam fringilla fringilla mi lacinia euismod. Mauris in arcu nec enim vulputate ultrices non vitae erat. Integer non imperdiet ligula. Sed luctus arcu eget ante sagittis convallis. Pellentesque mauris elit, condimentum vitae orci at, euismod aliquam risus. Quisque gravida egestas lacus, ac tristique felis accumsan porttitor. Pellentesque ac aliquam dui, vel interdum tortor.</p>
+      <p>Ut blandit pharetra neque in tempor. Nunc congue cursus diam, quis facilisis magna ultricies in. Integer vestibulum dapibus massa ac tempor. Proin metus eros, venenatis vel est at, eleifend sagittis ante. Aliquam eget dolor vitae justo varius sollicitudin et ut turpis. Cras felis lacus, fermentum quis sagittis nec, egestas in magna. Nam blandit, neque a laoreet sollicitudin, lorem tortor lacinia enim, nec suscipit magna elit vitae neque. Pellentesque aliquam ante eu auctor hendrerit. Maecenas eget justo et lectus suscipit consequat. Ut tincidunt bibendum vestibulum. Mauris ultricies libero a risus vehicula, vel ultricies tellus rhoncus. Duis bibendum ultrices lorem.</p>
+      <p>Maecenas eros odio, luctus lacinia nibh at, blandit fermentum enim. Aenean varius magna nulla, non vehicula justo faucibus ac. Aliquam nec eros nulla. Aliquam sit amet vestibulum tellus, eget commodo velit. Praesent a elit vel nunc tristique suscipit eget eu tellus. Donec hendrerit dictum urna eu mattis. Mauris eget diam lacinia, feugiat urna nec, interdum eros. Phasellus cursus felis eget mauris molestie porta. Donec dignissim nec nunc et blandit. In interdum sit amet magna iaculis auctor. Nulla nec mi eget velit vestibulum hendrerit ac vel orci.</p>
+      <p>Quisque laoreet, elit sed dapibus aliquet, nisi risus adipiscing mauris, non tempor risus risus tempus tellus. Praesent tincidunt ac massa sit amet faucibus. Vivamus a ultrices ante. Praesent nec lectus condimentum, tincidunt mauris non, ullamcorper odio. Sed a cursus nisl. In tellus purus, dictum nec purus at, dictum congue lorem. Nunc ac magna ultricies, egestas mi sed, fermentum magna. Vestibulum id felis ultricies, feugiat enim nec, imperdiet turpis. In ac varius lacus, vitae malesuada leo. Etiam vitae pharetra enim. Proin nulla augue, aliquet vitae urna at, ultricies fringilla lorem.</p>
+    </blog-post>
+  </blog>
 
 </body>
 </html>
