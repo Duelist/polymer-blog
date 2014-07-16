@@ -11,7 +11,7 @@ Element providing solution to no problem in particular.
 @element blog
 @blurb Element providing solution to no problem in particular.
 @status alpha
-@homepage http://Duelist.github.io/blog
+@homepage http://duelist.github.io/polymer-blog
 -->
 <polymer-element name="polymer-blog" attributes="title notitle">
 
@@ -19,52 +19,77 @@ Element providing solution to no problem in particular.
 
     <link rel="stylesheet" href="polymer-blog.css" />
 
-    <h1>{{title}}</h1>
-    <content></content>
+    <div class="blog-title">
+      <h1>{{ title }}</h1>
+    </div>
+    <div class="blog-content">
+      <content></content>
+    </div>
+    <div class="pagination">
+      <template repeat="{{ page in page_range }}">
+        <div data-id="{{ page }}" on-click="{{ pageClick }}" style="display: inline-block">{{ page }}</div>
+      </template>
+    </div>
 
   </template>
 
   <script>
+    (function () {
+      Polymer('polymer-blog', {
+        ready: function () {
+          this.current_post = 1;
+          this.posts_per_page = 5;
+          this.all_posts = document.querySelectorAll('blog-post');
+          this.num_posts = this.all_posts.length;
+          this.current_page = this.getCurrentPage();
+          this.num_pages = this.getNumPages();
+          this.page_range = this.createRange(1, 1, this.num_pages);
 
-    Polymer('blog', {
-      /**
-       * The `noevent` event is not actually fired from here,
-       * we document it as an example of documenting events.
-       *
-       * @event noevent
-       */
+          this.refreshView();
+        },
+        getCurrentPage: function () {
+          if (this.posts_per_page === 0) {
+            return 0;
+          }
 
-      /**
-       * The `notitle` attribute does not yet have a purpose.
-       *
-       * @attribute notitle
-       * @type string
-       */
-      notitle: '',
+          return Math.ceil(this.current_post / this.posts_per_page);
+        },
+        getNumPages: function () {
+          if (this.posts_per_page === 0) {
+            return 0;
+          }
 
-      /**
-       * The `aProp` is a property that does something cool.
-       *
-       * @property aProp
-       * @type bool
-       */
-      aProp: false,
+          return Math.ceil(this.num_posts / this.posts_per_page);
+        },
+        createRange: function (start, step, end) {
+          var i,
+            range = [];
 
-      ready: function() {
-      },
+          for (i = start; i <= end; i += step) {
+            range.push(i);
+          }
 
-      /**
-       * The `task` method does no work at this time.
-       *
-       * @method task
-       * @return {Object} Returns undefined.
-       * @param {String} dummy Serves no purpose today.
-       */
-      task: function(dummy) {
-      }
+          return range;
+        },
+        refreshView: function () {
+          var i;
 
-    });
+          for (i = 0; i < this.num_posts; i++) {
+            this.all_posts[i].classList.remove("hide");
+            if (i < (this.current_post - 1) || i >= (this.current_post - 1 + this.posts_per_page)) {
+              this.all_posts[i].classList.add("hide");
+            }
+          }
+        },
+        pageClick: function (event, detail, sender) {
+          var data = event.target.dataset;
+          this.current_post = ((data.id - 1) * this.posts_per_page) + 1;
+          this.current_page = data.id;
 
+          this.refreshView();
+        }
+      });
+    }());
   </script>
 
 </polymer-element>
