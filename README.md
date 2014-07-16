@@ -1,4 +1,4 @@
-blog
+polymer-blog
 ================
 
 See the [component page](http://Duelist.github.io/polymer-blog) for more information.
