@@ -1,7 +1,22 @@
 :host {
   display: block;
+  margin-bottom: 50px;
 }
 
 :host(.hide) {
   display: none;
+}
+
+:host h2 {
+  margin: 0px;
+}
+
+.sub-title {
+  font-size: 15px;
+  color: #757575;
+  opacity: 0.7;
+}
+
+.post-body {
+  font-size: 18px;
 }

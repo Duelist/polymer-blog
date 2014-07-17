@@ -12,15 +12,20 @@ Element providing solution to no problem in particular.
 @status alpha
 @homepage http://duelist.github.io/polymer-blog
 -->
-<polymer-element name="blog-post" attributes="notitle" noscript>
+<polymer-element name="blog-post" attributes="author publishdate" noscript>
 
   <template>
 
     <link rel="stylesheet" href="blog-post.css" />
 
     <div class="blog-post">
-      <content select="h3"></content>
-      <content></content>
+      <div class="post-header">
+        <content select="h2"></content>
+        <div class="sub-title">{{ author }} - {{ publishdate }}</div>
+      </div>
+      <div class="post-body">
+        <content></content>
+      </div>
     </div>
 
   </template>
